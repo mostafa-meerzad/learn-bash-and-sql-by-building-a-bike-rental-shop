@@ -75,3 +75,6 @@ chmod +x bike-shop.sh
 ./bike-shop.sh
 ./bike-shop.sh
 ./bike-shop.sh
+[[ A =~ [0-9] ]]
+[[ a =~ [0-9] ]]
+[[ a =~ [0-9] ]]
