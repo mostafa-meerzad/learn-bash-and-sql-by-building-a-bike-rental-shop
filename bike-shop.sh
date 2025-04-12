@@ -26,7 +26,6 @@ esac
 
 RENT_MENU(){
 
-  echo 'Rent Menu'
 }
 
 RETURN_MENU(){
