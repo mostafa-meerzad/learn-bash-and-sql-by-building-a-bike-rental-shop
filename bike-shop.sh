@@ -6,11 +6,11 @@ MAIN_MENU() {
 
   echo 'How may I help you?'
 
-  echo -e '\n1. Rent a bike
-2. Return a bike
-3. Exit'
+  echo -e '\n1. Rent a bike\n2. Return a bike\n3. Exit'
 
 read MAIN_MENU_SELECTION
 }
+
+RENT_MENU(){}
 
 MAIN_MENU
