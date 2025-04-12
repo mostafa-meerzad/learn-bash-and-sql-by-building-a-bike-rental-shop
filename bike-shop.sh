@@ -1,6 +1,7 @@
 #!/bin/bash
 
 PSQL="psql -X --username=freecodecamp --dbname=bikes --tuples-only -c"
+
 echo -e '\n~~~~~ Bike Rental Shop ~~~~~\n'
 
 MAIN_MENU() {
@@ -27,6 +28,7 @@ esac
 
 RENT_MENU(){
 # get available bikes
+AVAILABLE_BIKES=$($PSQL "SELECT bike_id, type, size FROM bikes WHERE available = TRUE ORDER BY bike_id")
 # if no bikes available
 # send to main menu
 }
