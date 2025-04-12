@@ -4,7 +4,7 @@ echo -e '\n~~~~~ Bike Rental Shop ~~~~~\n'
 
 MAIN_MENU() {
 
-  if [[ $1 ]]
+if [[ $1 ]]
 then
   echo -e "\n$1"
 fi
