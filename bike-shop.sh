@@ -4,6 +4,12 @@ echo -e '\n~~~~~ Bike Rental Shop ~~~~~\n'
 
 MAIN_MENU() {
 
+  if [[ $1 ]]
+then
+  echo -e "\n$1"
+fi
+
+
   echo 'How may I help you?'
 
   echo -e '\n1. Rent a bike\n2. Return a bike\n3. Exit'
@@ -19,6 +25,7 @@ esac
 }
 
 RENT_MENU(){
+
   echo 'Rent Menu'
 }
 
