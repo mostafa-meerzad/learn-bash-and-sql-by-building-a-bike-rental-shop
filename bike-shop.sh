@@ -51,26 +51,30 @@ RENT_MENU() {
     else
       # get bike availability
       BIKE_AVAILABILITY=$($PSQL "SELECT available FROM bikes WHERE bike_id = $BIKE_ID_TO_RENT AND available = true")
-      
+
       # if not available
       if [[ -z $BIKE_AVAILABILITY ]]
       then
-      # send to main menu
-      MAIN_MENU "That bike is not available."
-
+        # send to main menu
+        MAIN_MENU "That bike is not available."
       else
-      # get customer info
-      echo -e "\nWhat's your phone number?"
-      read PHONE_NUMBER 
-      CUSTOMER_NAME=$($PSQL "SELECT name FROM customers WHERE phone = '$PHONE_NUMBER'")
-      # if customer doesn't exist
-      if [[ -z $CUSTOMER_NAME ]]
-      then
-      # get new customer name
-      echo -e "\nWhat's your name?"
-      read CUSTOMER_NAME
-      # insert new customer
-      fi
+        # get customer info
+        echo -e "\nWhat's your phone number?"
+        read PHONE_NUMBER
+
+        CUSTOMER_NAME=$($PSQL "SELECT name FROM customers WHERE phone = '$PHONE_NUMBER'")
+
+        # if customer doesn't exist
+        if [[ -z $CUSTOMER_NAME ]]
+        then
+          # get new customer name
+          echo -e "\nWhat's your name?"
+          read CUSTOMER_NAME
+          
+          # insert new customer
+          INSERT_CUSTOMER_RESULT=$($PSQL "INSERT INTO customers(name, phone) VALUES('$CUSTOMER_NAME', '$PHONE_NUMBER')")
+
+        fi
       fi
     fi
   fi
