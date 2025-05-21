@@ -401,3 +401,6 @@ __vsc_original_prompt_command=${PROMPT_COMMAND:-}
 ./bike-shop.sh
 echo ' M e '
 echo "$(echo ' M e ')."
+echo "$(echo ' M e ')."
+echo "$(echo ' M e ')."
+echo "$(echo ' M e ' | sed 's/ //')."
