@@ -102,7 +102,7 @@ RETURN_MENU() {
     # send to main menu
     MAIN_MENU "I could not find a record for that phone number."
 
-else
+  else
   # get customer's rentals
 
   # if no rentals
